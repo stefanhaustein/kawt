@@ -1,0 +1,20 @@
+-C %KAWT%\src_javax
+javax.microedition.midlet.MIDlet
+javax.microedition.rms.InvalidRecordIDException
+javax.microedition.rms.RecordComparator
+javax.microedition.rms.RecordListener
+javax.microedition.rms.RecordStore
+javax.microedition.rms.RecordStoreException
+javax.microedition.rms.RecordStoreFullException
+javax.microedition.rms.RecordStoreNotFoundException
+javax.microedition.rms.RecordStoreNotOpenException
+-C %KAWT%\src_de
+de.kawt.impl.jbed.GifLoader
+de.kawt.impl.jbed.ImageImpl
+de.kawt.impl.jbed.SpotletImpl
+de.kawt.impl.jbed.ToolkitImpl
+de.kawt.impl.jbed.GraphicsImpl
+de.kawt.impl.jbed.FontMetricsImpl
+de.kawt.impl.jbed.LafImpl
+de.kawt.impl.jbed.RecordStoreImpl
+de.kawt.impl.AbstractRecordStore
