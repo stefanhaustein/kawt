@@ -1,0 +1,5 @@
+PenDemo
+PenDemo$PenCanvas
+-C %kawt%\src_de
+de.kawt.Closer
+de.kawt.KAWTlet

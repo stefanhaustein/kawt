@@ -1,0 +1,5 @@
+ColorDemo
+MemPanel
+-C %KAWT%\src_de
+de.kawt.KAWTlet
+de.kawt.Closer
