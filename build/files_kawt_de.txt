@@ -1,0 +1,9 @@
+-C %KAWT%\src_de
+de.kawt.TabbedPane
+de.kawt.TabControl
+de.kawt.OptionDialog
+de.kawt.ProgressBar
+de.kawt.Closer
+de.kawt.ImageItem
+de.kawt.WordWrap
+de.kawt.KAWTlet

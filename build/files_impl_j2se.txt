@@ -1,0 +1,10 @@
+-C %KAWT%\src_javax
+javax.microedition.rms.InvalidRecordIDException
+javax.microedition.rms.RecordComparator
+javax.microedition.rms.RecordListener
+javax.microedition.rms.RecordStore
+javax.microedition.rms.RecordStoreException
+javax.microedition.rms.RecordStoreFullException
+javax.microedition.rms.RecordStoreNotFoundException
+javax.microedition.rms.RecordStoreNotOpenException
+javax.microedition.midlet.MIDlet
