@@ -1,0 +1,162 @@
+<HTML>
+   <HEAD>
+     <TITLE>Download</TITLE>
+     <link rel="../html/stylesheet" href="style.css">
+   </HEAD>
+   <BODY bgcolor="#ffffff">
+ 
+   <h2>Download</h2>
+ 
+<h3>kAWT Version 1.0</h3>
+
+  <table border="true">
+    <tr bgcolor="#000000">  
+      <td><font color="#ffffff"><b>Platform / Requirements</b></font></td>
+      <td><font color="#ffffff"><b>Download File</b></font></td>
+      <td><font color="#ffffff"><b>Installation / Notes</b></font></td>
+    </tr>
+ 
+    <tr>
+      <td valign="top">CLDC&nbsp;RI&nbsp;(Palm)</td>
+      <td valign="top"><a href="kjava/kawt_pdb.zip">kawt_pdb.zip</a></td>
+      <td valign="top">The packages java.awt, java.awt.event, java.awt.image, de.kawt, and de.kawt.shell.</td>
+    </tr>
+    <!-- <tr>
+      <td valign="top">CLDC&nbsp;RI&nbsp;(Palm)</td>
+      <td valign="top"><a href="kjava/io_net_pdb.zip">io_net_pdb.zip</a></td>
+      <td>The packages java.io and java.net.</td>
+    </tr>-->
+    <tr>
+      <td valign="top">CLDC&nbsp;RI&nbsp;(Palm)</td>
+      <td valign="top"><a href="kjava/kawt_io_net_pdb.zip">kawt_io_net_pdb.zip</a></td>
+      <td valign="top">The packages java.awt, java.awt.event, java.awt.image, de.kawt, de.kawt.shell, java.io and java.net.</td>
+    </tr>
+    <tr>
+      <td valign="top">CLDC&nbsp;RI&nbsp;(Palm)</td>
+      <td valign="top"><a href="kjava/kawt_io_net.zip">kawt_io_net.zip</a></td>
+      <td valign="top">The compiled and preverified kAWT-classes in a jar file. Useful for compilation of own kAWT applications. Extension changed to zip because of download problems.</td>
+    </tr>
+    <tr>
+      <td valign="top">MIDP</td>
+      <td valign="top"><a href="midp/kawt_midp.zip">kawt_midp.zip</a></td>
+      <td valign="top">Experimental MIDP version of kAWT (JAR file, extension changed to zip because of download problems). Tested with SUN J2MEWTK and MIDP4Palm only. Put this file in the <tt>lib</tt> directory of your corresponding J2MEWTK 1.0.3 project folder. Recommended MIDP4Palm settings: No Buttons, fast drawing enabled (no double buffering).</td>
+    </tr>
+    <tr>
+      <td valign="top">MIDP</td>
+      <td valign="top"><a href="kawt_src_midp.zip">kawt_src_midp.zip</a></td>
+      <td valign="top">Experimental MIDP version of kAWT (source code). Tested with SUN J2MEWTK and MIDP4Palm only.</td>
+    </tr>
+    <tr>
+      <td valign="top">J2SE (Desktop)</td>
+      <td valign="top"><a href="j2se/kawt_j2se.zip">kawt_j2se.zip</a></td>
+      <td valign="top">A JAR file with zip extension containing the additional kawt classes (de.kawt.TabbedPane etc) for the desktop. Also contains an RMS subset.</td>
+    </tr>
+    <tr>
+      <td valign="top">All Platforms</td>
+      <td valign="top"><a href="kawt_src.zip">kawt_src.zip</a></td>
+      <td valign="top">The complete kAWT source code in a zip file.</td>
+    </tr>
+    <tr>
+      <td valign="top">All Platforms</td>
+      <td valign="top"><a href="kawt_doc.zip">kawt_doc.zip</a></td>
+      <td valign="top">The kAWT-Documentation in a zip file.</td>
+    </tr>
+   </table>
+
+<p>Special Platform Instructions can be found in our <a href="../doc">documentation section</a></p>
+
+<!--
+
+<h3>Prerelease Version</h3>
+
+<ul>
+<li><a href="../prerelease/KVM.zip">xKVM including support for enhanced screensize of the HandEra 330s</a></li>
+<li><a href="../prerelease/kawt_io_net_pdb.zip">kawt_io_net_pdb.zip (needed for xKVM running on HandEra330s)</a></li>
+<li><a href="../prerelease/kawt_pdb.zip">kawt_pdb.zip</a></li>
+<li><a href="../prerelease/kawt_io_net.zip">kawt_io_net.zip</a></li>
+<li><a href="../prerelease/kawt.zip">kawt.zip</a></li>
+</ul>
+
+<table border="true">
+<tr>
+<td valign="top"><b>Fixes&nbsp;(19.4.)</b></td>
+<td valign="top">Simple beam support and event handling fixed.</td>
+</tr>
+<tr>
+<td valign="top"><b>Fixes&nbsp;(4.4.)</b></td>
+<td valign="top">Simple beam support added.</td>
+</tr>
+<tr>
+<td valign="top"><b>Fixes&nbsp;(2.4.)</b></td>
+<td valign="top">Some FlowLayout and TabbedPane fixes; get and replace methods added to List.</td>
+</tr>
+<tr>
+<td valign="top"><b>Fixes&nbsp;(10.3.)</b></td>
+<td valign="top">Native image format <em>really</em> fixed, vertical label alignment improved. <em>updated: 16:20 GMT+1</em></td>
+</tr>
+<tr>
+<td valign="top"><b>Fixes&nbsp;(7.3.)</b></td>
+<td valign="top">Native image format index out of bound exception if byteArray has odd length fixed</td>
+</tr>
+<tr>
+<td valign="top"><b>Fixes (3.3.)</b></td>
+<td valign="top">File.exists (), FileInputStream constructor FileNotFoundException, addRepaint/flushRepaint sync problem, list horizontal scroll problem</td>
+</tr>
+<tr>
+<td valign="top"><b>Issues:</b></td>
+<td valign="top">ScrollPanel resizes contained element(?)</td>
+</tr>
+</table>
+
+-->
+          
+
+     <h3>Misc. tools and patches:</h3>
+     <ul>
+       <li><a href="../files/ByteArrayDumper.java">ByteArrayDumper.java</a>: Dumps a gif as bytearray to the shell (full package name to include this file: de.trantor.misc).</li>
+       <li><a href="../files/Protocol.java">Protocol.java</a>: The comm-protocol for the Generic Connection Framework on the J2SE. Java Comm-API must be installed properly ! (full package name to include this file: com.sun.cldc.io.j2se.comm).</li>
+       <li><a href="../files/Socket.java">Socket.java</a>:
+       java.net.Socket, wrapping the javax.microedition.io Connector
+       etc. for JVM-Like Socket support.</li> 
+     </ul> 
+
+     <h3>Archived files</h3>
+     <ul>
+     <li><a href="../files/kawt_source_vame12.zip">kawt_source_vame12.zip</a>: All source files of kAWT version 0.95 for VAME 1.2 Zip-Archive.</li>
+     <li><a href="../files/kawt_classes_vame12.jar">kawt_classes_vame12.jar</a>: All class files of kAWT version 0.95 for VAME 1.2 Jar-Archive.</li>
+     <li><a href="../files/kAWTv09951.zip">kAWTv09951.zip</a>: All files of kAWT version 0.9951 in one file.</li>
+
+     <li><a href="../files/kAWTv00_99_01.zip">kAWTv00_9901.zip</a>: All files of kAWT version 0.9901 in one file.</li>
+     <li><a href="../files/kAWTv0_9_8.zip">kAWTv0_9_8.zip</a>: All files of kAWT version 0.98 in one file.</li>
+     <li><a href="../files/kAWTv0_9_6.zip">kAWTv0_9_6.zip</a>: All files of kAWT version 0.96 in one file.</li>
+     <li><a href="../files/kAWTv0_9_5_1.zip">kAWTv0_9_5_1.zip</a>: All files of kAWT version 0.951 in one file.</li>
+     <li><a href="../files/kAWTv0_9_5.zip">kAWTv0_9_5.zip</a>: All files of kAWT version 0.95 in one file.</li>
+     <li><a href="../files/kAWTv0_9_0.zip">kAWTv0_9_0.zip</a>: All files of kAWT version 0.90 in one file.</li>
+     <li><a href="../files/kAWTv0_8_1.zip">kAWTv0_8_1.zip</a>: All files of kAWT version 0.81 in one file.</li>
+     <li><a href="../files/kAWTv0_8_0.zip">kAWTv0_8_0.zip</a>: All files of kAWT version 0.80 in one file.</li>
+     <li><a href="../files/kAWTv0_7_0.zip">kAWTv0_7_0.zip</a>: All files of kAWT version 0.70 in one file.</li>
+     <li><a href="../files/kAWTv0_6_1.zip">kAWTv0_6_1.zip</a>: All files of kAWT version 0.61 in one file.</li>
+     <li><a href="../files/kAWTv0_6_0.zip">kAWTv0_6_0.zip</a>: All files of kAWT version 0.60 in one file.</li>
+     <li><a href="../files/kAWTv0_3_0.zip">kAWTv0_3_0.zip</a>: All files of kAWT version 0.30 in one file.</li>
+     <li><a href="../files/kAWTv0_2_6.zip">kAWTv0_2_6.zip</a>: All files of kAWT version 0.26 in one file.</li>
+     <li><a href="../files/kAWTv0_2_5.zip">kAWTv0_2_5.zip</a>: All files of kAWT version 0.25 in one file.</li>
+     <li><a href="../files/kAWTv0_2_4.zip">kAWTv0_2_4.zip</a>: All files of kAWT version 0.24 in one file.</li>
+     <li><a href="../files/kAWTv0_2_3.zip">kAWTv0_2_3.zip</a>: All files of kAWT version 0.23 in one file.</li>
+     <li><a href="../files/kAWTv0_2_2.zip">kAWTv0_2_2.zip</a>: All files of kAWT version 0.22 in one file.</li> 
+     <li><a href="../files/kAWTv0_2_1.zip">kAWTv0_2_1.zip</a>: All files of kAWT version 0.21 in one file.</li>
+     <li><a href="../files/kAWTv0_2.zip">kAWTv0_2.zip</a>: All files of kAWT version 0.2 in one file.</li>
+     <li><a href="../files/kAWTv0_1_2.zip">kAWTv0_1_2.zip</a>: All files of kAWT version 0.12 in one file.</li>
+     <li><a href="../files/kAWTv0_1_1.zip">kAWTv0_1_1.zip</a>: All files of kAWT version 0.11 in one file.</li>
+     <li><a href="../files/kAWTv0_1.zip">kAWTv0_1.zip</a>: All files of kAWT version 0.1 in one file.</li>
+     <li><a href="../files/KawtSample_prc_4_kvmclasses_only.zip">KawtSample_prc_4_kvmclasses_only.zip</a>: The KawtSample.prc v0.21 with all necessary classesto run on KVM without to HotSync the kAWT Classes to the Palm. This file is for users which don't want to patch the KVMClassDB to see how kAWT-Sample looks like. (For KVM EA0.2 only!) </li> 
+     <li><a href="../files/VectorPatch_pdb.zip">VectorPatch_pdb.zip</a>:Vector-Patch for KVM DR4, to fix the
+       System.arraycopy()-bug. (We removed the native methods for arraycopy by simple for-loops. KJxfer needed to install!)</li>
+       <li><a href="../files/KJxfer.zip">KJxfer.zip</a>: KJxfer-Tool, used to add classes to the KVMClassDB on the Palm in Early
+       Access versions of KVM; in J2ME CLDC version included in the KVM.</li>
+     </ul>
+ 
+     
+ 
+   </BODY>
+ </HTML>
+ 
