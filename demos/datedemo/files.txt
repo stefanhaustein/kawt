@@ -1,0 +1,6 @@
+DateDemo
+-C %KAWT%\src_de
+de.kawt.date.CalendarCanvas
+de.kawt.date.CalendarComponent
+de.kawt.date.DateDialog 
+de.kawt.date.DateDialog$1
