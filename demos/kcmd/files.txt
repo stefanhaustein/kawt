@@ -1,0 +1,6 @@
+KCmd
+ImageCanvas
+ViewDialog
+FtpDialog
+
+
