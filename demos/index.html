@@ -1,0 +1,216 @@
+<HTML>
+  <HEAD>
+    <TITLE>kAWT - Samples and Screenshots</TITLE>
+    <link rel="stylesheet" href="../html/style.css">
+  </HEAD>
+  <BODY bgcolor="#ffffff">
+
+
+<H1>kAWT - Samples and Screenshots</H1>
+
+<h3>KawtDemo</h3>
+  <center>
+   <table border="true" cellpadding="5">
+    <tr>
+      <td align="center"><img src="kawtdemo/KawtDemo_palm.gif" /></td>
+      <td align="center"><img src="kawtdemo/KawtDemo_win.gif" /></td>
+<td align="center">
+<applet code="de.kawt.impl.j2se.KawtWrapper" archive="kawtdemo/KawtDemo.jar,../build/j2se/kawt_j2se.zip" WIDTH="80" HEIGHT="30">
+  <param name="KAWTlet" value="KawtDemo">
+</applet>
+</td>
+      <td align="center"><img src="kawtdemo/KawtDemo_midp.gif" /></td>
+    </tr>
+
+    <tr>
+      <td align="center"><em>Palm</em></td>
+      <td align="center"><em>Desktop</em></td>
+      <td align="center"><em>Applet*</em></td>
+      <td align="center"><em>MIDP</em></td>
+    </tr>
+   </table>
+  </center>
+
+
+  <h4>Description</h4>  
+
+  <p>
+    The KawtDemo shows most of the kAWT widgets currently available like Panels, Buttons, Checkboxes, Textfields etc.
+  </p>
+
+<p>*) If your browser cannot display the applet, please use the appletviewer from SUN:</p>
+<pre>
+   appletviewer http://www.kawt.de/demos/index.html
+</pre>
+
+  <h4>Files</h4>
+
+  <table border="true">
+    <tr bgcolor="#000000">  
+      <td><font color="#ffffff"><b>Platform / Requirements</b></font></td>
+      <td><font color="#ffffff"><b>Download File</b></font></td>
+      <td><font color="#ffffff"><b>Installation / Notes</b></font></td>
+    </tr>
+
+    <tr>  
+        <td valign="top"><b>Java Source</b><br> JDK 1.2, de.kawt.* packages</td>
+	<td valign="top"><a href="kawtDemo/KawtDemo.java">KawtDemo.java</a></td>
+	<td valign="top">The de.kawt.* packages are available in the download section</td>
+    </tr>
+
+    <tr>
+        <td valign="top"><b>Palm OS</b> 3.1,<br />KVM 1.0</td>
+	<td valign="top"><a href="kawtDemo/KawtDemo_prc.zip">KawtDemo_prc.zip</a></td>
+	<td valign="top">Unzip the file 'KawtDemo_prc.zip' and install the <tt>prc</tt>-file using Palm Desktop installation tool, or just drag the file on POSE. On SUN's KVM, the application will be displayed black and white only. For color or grayscale display, please install our ColorKVM modification.</td>
+     </tr>
+     <tr>
+        <td valign="top"><b>Palm OS</b> 3.1,<br />68EZ328 processor</td>
+	<td valign="top"><a href="kawtDemo/KawtDemo_Jbed.zip">KawtDemo_Jbed.zip</a></td>
+	<td valign="top">Unzip  <tt>KawtDemo_Jbed.zip</tt> and install the prc file. This version is compiled with Jbed from Esmertec, so no additional VM is required on the PDA. To run Jbed Applications on POSE, it is necessary to <a href="#jbed">change some emulator preferences</a>.
+      </td>
+       </tr>
+       <tr>  
+        <td valign="top"><b>MIDP</b> 1.0</td>
+	<td valign="top"><a href="kawtDemo/KawtDemo.jad">KawtDemo.jad</a></td>
+	<td valign="top">Just point your MIDP device to http://www.kawt.de/demos/kawtdemo/KawtDemo.jad</td> 
+      </tr>
+       <tr>  
+        <td valign="top"><b>Desktop</b>, JRE 1.2 or higher</td>
+	<td valign="top"><a href="kawtDemo/KawtDemo.zip">KawtDemo.zip</a></td>
+	<td valign="top">Download the zip file and place it e.g. in your home directory. To run the application, type the following command in the directory where the KawtDemo.jar file is located: java -jar KawtDemo.zip</td>
+      </tr>       
+
+    </table>
+  </center>
+
+
+<p>
+  <hr>
+
+<h3>ColorDemo</h3>
+  <center>
+   <table border="true" cellpadding="5">
+    <tr>
+      <td align="center"><img src="colordemo/ColorDemo_palm4.gif" /></td>
+      <td align="center"><img src="colordemo/ColorDemo_palm8.gif" /></td>
+      <td align="center"><img src="colordemo/ColorDemo_prism.gif" /></td>
+    </tr>
+    <tr>
+      <td align="center"><em>Palm 4 bit</em></td>
+      <td align="center"><em>Palm 8 bit</em></td>
+      <td align="center"><em>Prism 16 bit</em></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><img src="colordemo/ColorDemo_win.gif" /></td>
+      <td align="center"><img src="colordemo/ColorDemo_midp.gif" /></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2" align="center"><em>Desktop</em></td>
+      <td align="center"><em>MIDP</em></td>
+    </tr>
+   </table>
+  </center>
+  <p>
+    The ColorDemo shows the usage of color with kAWT. 
+    In order to actually see colors on a Palm IIIc, 
+    the ColorKVM is required.
+  </p>
+  <h4>Download</h4>
+  <ul>
+   <li>Source: <a href="colordemo/ColorDemo.java">ColorDemo.java</a></li>
+   <li>Palm Binary: 
+      <a href="colordemo/ColorDemo_prc.zip">ColorDemo_prc.zip</a></li>
+   <li>Desktop jar file: <a href="colorDemo/ColorDemo.jar">ColorDemo.jar</a><br>
+      java -jar ColorDemo.jar
+   </li>  
+  </ul>
+  <hr>
+
+
+<h3>PenDemo</h3>
+  <center>
+   <table border="true" cellpadding="5">
+    <tr>
+      <td><img src="pendemo/PenDemo_palm.gif" /></td>
+      <td><img src="pendemo/PenDemo_win.gif" /></td>
+      <td><img src="pendemo/PenDemo_midp.gif" /></td>
+    </tr>
+    <tr>
+      <td align="center"><em>Palm</em></td>
+      <td align="center"><em>Desktop</em></td>
+      <td align="center"><em>MIDP</em></td>
+    </tr>
+   </table>
+  </center>
+  <p>
+    The PenDemo shows how to create user graphics overriding Canvas and how to use MouseEvents for stylus input in kAWT. 
+  </p>
+  <h4>Download</h4>
+  <ul>
+   <li>Source: <a href="pendemo/PenDemo.java">PenDemo.java</a></li>
+   <li>Palm Binary: 
+      <a href="pendemo/PenDemo_prc.zip">PenDemo_prc.zip</a></li>
+   <li>Desktop jar file: <a href="penDemo/PenDemo.jar">PenDemo.jar</a><br>
+      java -jar PenDemo.jar
+   </li>  
+  </ul>
+  <hr>
+
+<h3>GifDemo</h3>
+  <center>
+   <table border="true" cellpadding="5">
+    <tr>
+      <td align="center"><img src="gifdemo/GifDemo_palm.gif" /></td>
+      <td align="center"><img src="gifdemo/GifDemo_win.gif" /></td>
+    </tr>
+    <tr>
+      <td align="center"><em>Palm</em></td>
+      <td align="center"><em>Desktop</em></td>
+    </tr>
+   </table>
+  </center>
+
+  <h4>Description</h4>  
+  <p>
+    The GifDemo shows how to display an image using (k)AWT.
+  </p>
+  <h4>Files</h4>
+
+  <table border="true">
+    <tr bgcolor="#000000">  
+      <td><font color="#ffffff"><b>Platform / Requirements</b></font></td>
+      <td><font color="#ffffff"><b>Download File</b></font></td>
+      <td><font color="#ffffff"><b>Installation / Notes</b></font></td>
+    </tr>
+
+    <tr>  
+        <td valign="top"><b>Java Source</b><br> JDK 1.2, de.kawt.* packages</td>
+	<td valign="top"><a href="gifdemo/GifDemo.java">GifDemo.java</a></td>
+	<td valign="top">The ByteArrayDumper that is needed to create a byte array from a given GIF image is available in the FAQ section, or can be downloaded directly using the following link: <a href="../files/ByteArrayDumper.java">ByteArrayDumper.java</a>.</td>
+    </tr>
+
+    <tr>
+        <td valign="top"><b>Palm OS</b> 3.1,<br />KVM 1.0</td>
+	<td valign="top"><a href="gifdemo/GifDemo_prc.zip">GifDemo_prc.zip</a></td>
+	<td valign="top">Unzip the file 'GifDemo_prc.zip' and install the <tt>prc</tt>-file using Palm Desktop installation tool, or just drag the file on POSE.</td>
+     </tr>
+    </table>
+  </center>
+
+<hr>
+
+<a name="jbed"><h4>Changes in the POSE preferences required for Jbed</h4></a>
+ 
+<p>The Jbed compiler makes some direct access to Palm hardware that will cause warings in POSE. Please change the "Palm OS Emulator.ini" file in your Windows root directory to turn of the corresponding warning messages:</p>
+
+      <ul>                       
+      <li>ReportHardwareRegisterAccess=0</li>
+      <li>ReportLowMemoryAccess=0</li> 
+      <li>ReportStackAlmostOverflow=0</li> 
+      <li>ReportStackOverflow=0</li>
+      </ul>
+</BODY>
+</HTML>
+
+
+
