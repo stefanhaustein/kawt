@@ -1,0 +1,135 @@
+<html>
+  <HEAD>
+    <TITLE>FAQ</TITLE>
+    <link rel="stylesheet" href="../html/style.css">
+  </HEAD>
+<body bgcolor="#ffffff">
+
+<h1>FAQ</h1>
+<h4><a name="Q">Questions:</a></h4>
+<a href="#A1">Question 1:</a> When I execute the KawtSamle I got the error "Cannot load class java/awt/Frame". How do I solve this error?
+<p>
+<a href="#A2">Question 2:</a> When I execute the KawtSamle I got the error "Cannot load class java/io/FileInputStream". How do I solve this error?
+<p>
+<a href="#A3">Question 3:</a> Why can't I use grayscales on my Visor or Palm using PalmOS3.1 or PalmOS3.3?
+<p>
+<a href="#A4">Question 4:</a> Running the KawtSample.prc with the new kAWTv0.81 causes the folowing error "No such Method add(Ljava/awt/Menu;)V". What went wrong? 
+<p>
+<a href="#A5">Question 5:</a> How do I speed up the long kAWT-class loading times?
+<p>
+<a href="#A6">Question 6:</a> How do I use GIF-Images with kAWT?
+<p>
+<a href="install_wtk.html">Question 7:</a> How do I run the KawtSample using the MIDP Emulator EA1 from SUN?
+<p>
+<a href="#A8">Question 8:</a> How do I install kAWT on my Palm?
+<p>
+<a href="#A9">Question 9:</a> Is it possible to display the keyboard- or the numeric field dialog from a KVM/kAWT application?
+<p>
+<a href="build_j9.html">Question 10:</a> How do I use kAWT with OTI J9?
+<p>
+<a href="#A11">Question 11:</a> How can I access the Spotlet beam methods when using kawt?
+
+<hr>
+<a name="A1"><h3>Answer 1:</h3></a> 
+This error occurs, if you haven't
+installed the kawt.pdb class database. Please install at least the
+file kawt.pdb onto you machine or POSE, or use the ColorKVM with
+ROMized kAWT.
+<p>
+<a href="#Q">Back to questions...</a>
+<hr>
+<a name="A2"><h3>Answer 2:</h3></a> 
+This error occurs, if your
+application wants to load the additional class java.io.FileInputStream
+which is included inkawt_io_net.pdb or kio_net.pdb.  It's not possible
+to install the files kawt_io_net.pdb of kio_net after kawt.pdb is
+already installed. Please reinstall the KVM.prc and the KVMutil.prc.
+After the KVM installation use kawt_io_net.pdb instead the kawt.pdb
+file which contains only the java.awt-package. The package java.io is
+also included in the ColorKVM with ROMized kAWT. If you are using the
+ROMized ColorKVM no additonal pdb-class files are neccessary to run
+the KawtSample, kCmd or kFtp.
+<p>
+<a href="#Q">Back to questions...</a>
+<hr>
+<a name="A3"><h3>Answer 3:</h3></a> 
+For our ColorKVM we use new the
+PalmOS3.5 feature set.  In older versions of PalmOS there are no
+functions like <b>WinRGBToIndex</b> or <b>WinSetForeColor</b>
+or <b>WinSetBackColor</b> to draw in color or grayscale mode. However the
+Color feature is currently only available for PalmOS 3.5 devices.
+<p>
+<a href="#Q">Back to questions...</a>
+<hr>
+<a name="A4"><h3>Answer 4:</h3></a> 
+In kAWTv0.80 the method signature in MenuBar.add (Menu m) returns nothing (void) but in the AWT the method returns the inserted Menu.<br>
+We have changed the signature of MenuBar's add() method to "public Menu add (Menu m)" in kAWTv0.81 to be compatible with the AWT MenuBar.<br>
+Please recompile the KawtSample to solve this problem.
+<p>
+<a href="#Q">Back to questions...</a>
+<hr>
+<a name="A5"><h3>Answer 5:</h3></a> 
+<p>
+To increase the loading times of the kAWT Classes try to use the ColorKVM with ROMized kAWT. This kind of KVM is enhanced for the
+use of kAWT and Color. ROMizing means that the additional kAWT classes are not loaded from an external database. The kAWT Classes are linked into
+the ColorKVM as binaries. This speeds up the loading time e.g. for the KawtSample by factor 10.
+<p>
+<a href="#Q">Back to questions...</a>
+<hr>
+<a name="A6"><h3>Answer 6:</h3></a> 
+<p>
+In kAWT version 0.90 there is a new class <b>ImageItem</b> included to add an Image directly into a Panl like an other component. The following Example will show how to write a little sample application which shows an image in the "Center" of a Frame's Borderlayout.
+<p>
+The first step is to convert a GIF-Image to a bytearray. This is done using the <b>ByteArrayDumper</b>. This tool is available at the download section of the kAWT website (<a href="files/ByteArrayDumper.java">ByteArrayDumper.java</a>). To convert a GIF image like <a href="images/javacup.gif">javacup.gif</a> into a bytearray use the following command: <pre><b>java de.trantor.misc.ByteArrayDumper javacup.gif > javacup.java</b></pre> As result you will get the following file <a href="files/javacup.java">javacup.java</a> that looks like the following code:
+<table>
+  <tr>
+  <td>
+  <pre>
+  byte [] javacup= new byte [] {
+	71,73,70,56,55,97,57,0,88,0,-128,0,0,0,0,0,-1,-1,-1,44,
+	0,0,0,0,57,0,88,0,0,2, -2,-116,-113,-87,-53,-19,15,-93,-100,-76,
+	-38,-117,-77,-34,-68,-5,10,124,98,16,-114,94,105,114,104,-86,-83,108,-26,-66,
+	86,44,83,0,93,75,120,14,-19,-4, -29,-5,49,110,66,80,-79,-121,8,-54,
+	92,68,-125,114,-103,88,61,89,-51,-125,-12,-104,-116,-94,-90,-44,-88,21,-101,13,
+	-109,-72,-87,-19,22,44,110,86,-47,103,39,-71,28,82,-65,77,68,57,58,25,
+	-49,-33,-83,-7,91,-48,-65,-90,2,56,-24,-44,48,8,-40,-126,-24,70,72,115,
+	120,-120,-31,-120,88,23,73,73,56,83,-119,105,-23,54,-26,119,-111,25,-55,-121,
+	23,-57,-23,-87,41,-58,103,57,89,8,-7,41,-91,-72,-86,-70,-15,8,-94,71,
+	34,-37,-87,-29,58,-74,121,-37,-118,-69,57,-37,-21,-5,26,44,-20,-85,-48,-9,
+	97,-70,-16,-70,72,55,-116,26,-88,60,-4,-69,68,-3,50,11,-3,92,29,77,
+	-23,32,29,-47,44,2,-114,-60,89,44,-118,107,70,28,78,-35,-50,-60,-27,-34,
+	-38,-51,26,-97,121,82,47,62,98,-65,-57,-33,63,116,-66,103,89,63,110,-2,
+	8,-18,50,-73,70,-45,28,100,-32,-86,44,83,100,-48,-122,52,98,19,93,45,
+	20,-59,48,97,12,94,-121,17,39,16,-84,-27,44,-44,60,24,-127,38,-87,-61,
+	19,-86,35,-69,119,-92,80,-15,-30,69,46,-41,-69,102,-23,44,-26,-13,-88,-79,
+	-104,26,116,55,101,-94,12,-71,72,-29,-49,82,102,-76,-16,28,-38,-14,82,81,
+	-116,46,69,54,85,10,52,106,-75,-118,11,59,41,84,56,18,-31,28,-107,108,
+	98,98,41,-31,-11,-120,-64,-128,92,-3,-103,61,-117,54,-83,-38,-75,17,10,0, 0,59};
+</pre>
+</td>
+  <td><img src="../images/white_space.GIF"></td>
+  <td><img src="../images/ImageTest_scrshot.GIF"></td>
+  </tr>
+</table>
+If you place this bytearray into an application like <a href="files/ImageTest.java">ImageTest.java</a> you will gain this picture
+after you sucessfully compiled, preverified and built a prc-file <a href="files/ImageTest_prc.zip">ImageTest_prc.zip</a> from it.
+<p>
+<a href="#Q">Back to questions...</a> 
+<hr>
+<a name="A8"><h3>Answer 8:</h3></a> 
+Please look at the Documentation Section, where you can find a description how to install kAWT and compile the KawtDemo application.
+<p>
+<a href="#Q">Back to questions...</a>
+<hr>
+<a name="A9"><h3>Answer 9:</h3></a> 
+No, there is neither a routine for displaying the keyboard nor to display the numeric dialog from a KVM/kAWT application.
+<p>
+<hr>
+<a name="A11"><h3>Answer 11:</h3></a> 
+The variable <tt>de.kawt.impl.kjava.ToolkitImpl.spotlet</tt> gives you access to the kAWT spotlet. There, you can call <tt>beamSend()</tt> directly. For <tt>beamReceive()</tt>, please register a class implementing <tt>de.kawt.impl.kjava.BeamListener</tt> using the <tt>setBeamListener()</tt> method. 
+
+</body>
+</HTML>
+
+
+
