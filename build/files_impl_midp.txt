@@ -1,0 +1,7 @@
+-C %KAWT%\src_de
+de.kawt.impl.midp.ImageImpl
+de.kawt.impl.midp.ToolkitImpl
+de.kawt.impl.midp.GraphicsImpl
+de.kawt.impl.midp.FontMetricsImpl
+de.kawt.impl.midp.CanvasImpl
+de.kawt.impl.kjava.LafImpl
