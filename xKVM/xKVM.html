@@ -1,0 +1,109 @@
+<HTML>
+  <HEAD>
+    <TITLE>xKVM / Color KVM</TITLE>
+    <link rel="stylesheet" href="style.css">
+  </HEAD>
+  <body bgcolor="#ffffff">
+
+<H1>The xKVM / <font color=#FF0000>C</font><font color=#00FF00>o</font><font color=#0000FF>l</font><font color=#ffff00>o</font><font color=#FF9933>r</font> KVM</H1>
+
+The xKVM, formerly known as ColorKVM,  is our latest development project.
+We decided to rename the ColorKVM to xKVM (extended KVM) because we have
+added several new features since our initial color enhancement.
+<p>  
+The following features were added to SUN's KVM 1.0.2 sources:
+</p>
+<ul>
+<li>Color and grayscale support on PalmOS 3.5 devices</li>
+<li>16-Bit Color support for Handspring PRISM devices</li>
+<li>JogDial support for Sony Clie devices</li>
+<li>HandEra 330s 240 x 320 QVGA high resolution screen and support for minimizing and maximizing the silkscreen</li>
+</ul>
+Additionaly, we use JavaCodeCompact to ROMize the kAWT directly to the
+KVM. This feature reduces loading times of kAWT applications up to factor
+10.  For example, loading the kAWT Sample running on a non ROMized KVM
+takes up to 40 seconds loading time. ROMizing the kAWT classes
+reduces the loading time to 4-5 secs. 
+<!--
+<p>
+<center>
+<table>
+  <tr>
+    <td><img src="../images/KVMuil1.gif"></td>
+    <td><img src="../images/white_space.gif"></td>
+    <td><img src="../images/KVMutil2.gif"</td></tr>
+    <td><img src="../images/white_space.gif"></td>
+    <td><img src="../images/KVMutil3.gif"</td></tr>
+  </tr>
+</table>
+</center>
+<p>
+-->
+
+<H2>Using Color or Grayscale with kAWT</H2> 
+
+The simpliest way to use colors in the ColorKVM is to use the Graphics
+method setColor(Color c) to set the actual color for drawing e.g. a
+line. 
+
+<H2>Using color with the com.sun.kjava classes</H2>
+
+For the color support, we did not add new native methods to
+the KVM.  Instead, we just modified the drawing routines for lines, text and
+rectangles to accept additonal drawmode values, determining the color,
+while still preserving the meaning of the KJava constants for
+compatibility with existing applications. 
+For colored or grayscale drawing, set the lowest byte of
+the paint mode to 5, the highest byte to the red value, the second
+highest byte to the green value, and the second lowest byte to the
+blue value. The corresponding formula is:
+<pre>  
+  (red << 24) + (green << 16) + (blue << 8) + 5
+</pre>
+
+Example for drawing a colored line: 
+<pre>
+  int red = 255;
+  int green = 0;
+  int blue = 0;
+
+  int mode = (red << 24) + (green << 16) + (blue << 8) + 5;
+
+  Graphics g = getGraphics ();
+
+  g.drawLine(0, 0, 100, 100, mode); 
+</pre>
+
+Here is a small sample application which shows how to use the new color feature without kAWT:
+<table>
+  <tr><td><img src="../images/colorTestClr.gif"></td>
+      <td><img src="../images/white_space.gif"></td>
+      <td><img src="../images/colorTestGray.gif"</td>
+      </tr>
+</table>
+
+
+<ul>
+  <li><a href="../files/ColorTest_prc.zip">ColorTest_prc.zip</a>: The ColorTest prc-file.</li>
+  <li><a href="../files/ColorTest.java">ColorTest.java</a>: The ColorTest java sourcefile.</li>
+</ul>
+
+<H2>Download the xKVM / ColorKVM</H2>
+<a href="DownloadxKVM.html">Download the xKVM / ColorKVM binaries...</a>
+</body>
+
+</HTML>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
