@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>kAWT - Usage and compilation of kAWT with the Wireless Toolkit</title>
+    <link rel="stylesheet" href="../html/style.css">
+  </head>
+<body bgcolor="#FFFFFF">
+<h1>kAWT - Usage and compilation of kAWT with the Wireless Toolkit</h1>
+
+In order to use kAWT in the Wireless Toolkit follow the steps listed below.
+<ol>
+<li>Create a new Project, e.g. KawtDemo</li>
+<li>Since the new Wireless Toolkit v1.0.3 supports libraries, just copy the file <a href="../build/midp/kawt_midp.zip">kawt_midp.zip</a> 
+file into the <tt>c:\programs\j2mewtk\apps\KawtDemo\lib</tt>directory</li>
+<li>Save <a href="../demos/kawtdemo/KawtDemo.java">KawtDemo.java</a> in <tt>c:\j2mewtk\apps\kawtdemo\src</tt></li>
+<li>Try to build and run the application.</li>
+</ol>
+
+if you want to create the MIDP distribution of kAWT yourself
+you need to download the kAWT source distribution contained in 
+<a href="../build/kawt_src.zip">kawt_src_zip</a>. 
+Unzip the file into a directory called <b>c:\kawt</b> for instance.
+After successfully unziped the kawt distribution 
+install JDK 1.3 and the J2ME Wireless Toolkit.
+
+Before we start to compile the kAWT version for MIDP/WTK we need to
+setup some environment variables, add the MIDP API classes to the classpath and
+add the previerifier to the PATH variable.
+
+The following environment variables need to be added on a Win32 machine.
+<ul>
+  <li>MIDP_BCP=c:\j2mewtk\lib\midpapi.zip</li>
+  <li>KAWT=c:\kawt</li>
+  <li>KAWT_DRIVE=c:</li>
+  <li>PATH=%PATH%;c:\j2mewtk\bin</li>
+</ul>
+Now you can change to the directory <b>kawt\bin</b> and run the <b>make_kawt_midp.bat</b> compiling
+the kAWT version for MIDP. The zip file <b>kawt_midp.zip</b> containing the compiled and preverified 
+classes can be found in the directory <b>kawt\build\midp</b> and can be used with the Wireless Toolkit as 
+discussed in the first paragraph.
+</body>
+</html>
+
+
+
