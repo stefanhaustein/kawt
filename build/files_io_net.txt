@@ -1,0 +1,9 @@
+-C %KAWT%\src_java_addon
+java.io.RandomAccessFile
+java.io.File
+java.io.FileInputStream
+java.io.FileOutputStream
+java.io.ClusterTable
+java.io.FileNotFoundException
+java.net.Socket
+java.net.UnknownHostException

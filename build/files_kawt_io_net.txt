@@ -1,0 +1,11 @@
+@%KAWT%\build\files_kawt.txt
+@%KAWT%\build\files_io_net.txt
+-C %KAWT%\src_java_addon
+java.awt.FileDialog
+-C %KAWT%\src_de
+de.kawt.FileList
+de.kawt.FileListActivationListener
+de.kawt.shell.AbstractShell
+de.kawt.shell.DefaultShell
+de.kawt.shell.FtpShell
+de.kawt.shell.FileInfo
