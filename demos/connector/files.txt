@@ -1,0 +1,5 @@
+ConnectorSample
+ConnectorSample$Appender
+ConnectorSample$ReadThread
+-in h:\java
+de.kawt.Closer
