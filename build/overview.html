@@ -1,0 +1,30 @@
+<BODY>
+The goal of the kAWT project is to provide a
+simplified version of AWT for the KVM: The original com.sun.kjava
+classes included in J2ME CLDC KVM 1.0 differ from the standard Java UI
+components in many aspects. Thus, porting applications to the PDA
+becomes a bit complicated. The most important problem is that only
+limited support for event handling is provided by KVM. Our simplified
+version of AWT does not let all AWT programs run on the Palm without
+adoption, but at least the other way around should work: Applications
+designed for kAWT should run on the "big brothers" of the KJava
+platform without needing any additional modifications like wrapper
+classes or similar.
+</p>
+<p>
+In contrast to the original AWT, the kAWT
+is implemented all lightweight similar to SWING, 	
+so for other platforms than PalmOS
+only Graphics, Toolkit and a SpotletWrapper 
+need to be ported. The tradeoff is getting 
+the same "Look and Feel" on all platforms
+since pluggable Look and Feel
+is not supported in kAWT.
+</p>
+<p>
+The current kAWT implementation is a "clean room" 
+implementation not depending on original SUN Java 
+code, but of course on the AWT documentation.
+
+
+</BODY>
