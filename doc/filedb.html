@@ -1,0 +1,106 @@
+<html>
+ <head>
+  <title>The kAWT FileDB Format</title>
+  <link rel="stylesheet" href="../html/style.css"> 
+</head>
+
+<body bgcolor="#ffffff">
+  
+<h1>The kAWT FileDB Format</h1>
+
+<p> The IO extension of kAWT contains a hierarchical file system
+simulation based on a regular Palm memory database. Storing clusters on a Palm is done 
+inside a database called "TrantorFileDB" with creatorID/typeID = KAWT/FILE</p>
+
+<h2>Record Structure</h2>
+
+<p> The first record (#0) in the FileDB contains the cluster table of
+the root directory. The second record contains a list of unused
+records.  </p>
+
+<h2>Files</h2>
+
+<p>Files consist of a cluster table and one or more data records. The
+data records have a fixed size of 512 bytes.  </p>
+
+<h2>Cluster Tables</h2> 
+
+<p> The first four bytes of the cluster table contain the current file
+length in Motorola format.  The file length is followed by (filesize /
+512) two-byte entries. These entries are pointers to the 512-byte
+records containing the actual file data.
+
+<h2>Directories</h2>
+
+<p> Directories are organized like simple files. The directory 
+file contains a list of filenames and cluster table record pointers.
+The directory entires start with a letter (D/F), denoting
+the type of the entry. If the letter is a "D", the entry points
+to a directory. If the letter is a "F", the entry points to a
+simple file. The type letter is followed by a space and the
+local name of the file. The file name is followed by a space.
+The space is followed by the record number of the
+cluster table of the file. The record number is encoded in
+decimal format. The entry is terminated by a newline
+character (#10, 0x0A).
+
+<h2>Available FileDB based applications</h2>
+
+
+
+
+<h4>kFtp - A kAWT based FTP Client</h4>
+<table>
+  <tr>
+    <td><center><img src="../images/cpColor.GIF"></center></td>
+    <td><img src="../images/white_space.gif"></td>
+    <td><center><img src="../images/Color.gif"></center></td>
+  </tr>
+</table>
+<p>
+On the left screenshot you can see kFtp showing the kAWT documentation
+directory of ftp.trantor.de on the left filelist and on the right
+filelist you can see the local filesystem. On this screenshot kFtp is
+transfering the file Color.html to the Palm. The right screenshot shows
+the opened file Color.html.
+<p>
+kFtp gives you the ability to copy files from a ftp-server to the
+local filesystem, or open two ftp-connections, and transfer files
+between two ftp-servers. "Clicking" on the ftp-button opens a ftp
+connection, and a "click" on ftp during an opened ftp-session will
+close it. Additionaly you are able to remove and create directories
+and delete files, too.
+<p>
+Caution: kFtp is built using the <-networking>-flag. (Application will
+try to open a network connection on startup.)
+
+<h5>Download kFtp</h5>
+<ul>
+  <li><a href="../demos/kcmd/KFtp_prc.zip">KFtp_prc.zip</a>: KFtp.prc in a zip-archive (requires kAWT v0.9903).</li>
+  <li><a href="../demos/kcmd/kcmd_src.zip">kcmd_src.zip</a>: kCmd and kFtp sources in a zip-archive.</li>
+</ul>
+
+
+<h4>kCmd - A kAWT based FileCommander</h4>
+
+<img src="../images/commander.GIF">
+<p> kCmd is a simple FileCommander. You cannot connect to ftp-servers,
+but you can copy, remove directories and files and create new
+directories.
+
+<h5>Download kCmd</h5>
+<ul>
+  <li><a href="../demos/kcmd/KCmd_prc.zip">KCmd_prc.zip</a>: KCmd.prc in a zip-archive (requires kAWT v0.9903).</li>
+  <li><a href="../demos/kcmd/kcmd_src.zip">kcmd_src.zip</a>: kCmd and kFtp sources in a zip-archive.</li>
+</ul>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
