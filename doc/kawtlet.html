@@ -1,0 +1,46 @@
+<html>
+  <HEAD>
+    <TITLE>Running kAWT Applications as Applet or MIDlet</TITLE>
+    <link rel="stylesheet" href="../html/style.css">
+  </HEAD>
+<body bgcolor="#ffffff">
+<h1>Running kAWT Applications as Applet or MIDlet</h1>
+
+<p>In order to run kAWT applications as Applet or MIDlet,
+they must be derived from the special wrapper class
+<tt>de.kawt.KAWTlet</tt>. The KAWTlet works similar to
+a MIDlet. The 
+<a href="../demos/hellokawt/HelloKawt.java">HelloKawt.java</a>
+file demonstrates a minimal implementation. The 
+KAWTlet is invoked by a special wrapper class. The name
+of the wrapper class is KawtWrapper, where the package name
+depends on the target platform.</p>
+
+<p>For compatibility, it is recommended to add a simple
+main metod to the KAWTlet implementation that instantiates 
+the KAWTlet and calls <tt>startApp ()</tt></p>   
+
+
+<h2>Applet Sample Code</h2>
+
+<pre>
+&lt;applet code="de.kawt.impl.j2se.KawtWrapper.class" 
+        WIDTH="80" HEIGHT="30"&gt;
+  &lt;param name="KAWTlet" value="HelloKawt"&gt;
+&lt;/applet&gt; 
+</pre>
+
+
+
+<h2>MIDP Instructions</h2>
+
+<ol>
+<li>Build a JAR file containing your application and the kAWT classes required for MIDP.</li>
+<li>Enter "de.kawt.impl.midp.KawtWrapper" as MIDlet to be started in the JAD file.</li>
+<li>Add a "KAWTlet" property to the JAD file. Enter  the class name of your KAWTlet implementation as value of the "KAWTlet property</li>
+</ol>  
+<p>see also: <a href="install_wtk.html">installation instructions for J2MEWTK</a></p>
+
+
+</body>
+</html>

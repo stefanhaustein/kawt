@@ -1,0 +1,228 @@
+<html>
+  <head>
+    <title>kAWT - Installation and compilation instructions</title>
+    <link rel="stylesheet" href="../html/style.css">
+  </head>
+<body bgcolor="#FFFFFF">
+<h1>kAWT - Installation and compilation instructions for the CLDC reference Implementation (Palm Pilot)</h1>
+
+<h2>Installation</h2> 
+
+<p>Before installation of the kAWT specific files, you have to obtain
+a copy of SUNs J2ME Connected Limited Device Configuration Version
+1.0, which can be downloaded from the following URL: <a
+href="http://www.sun.com/software/communitysource/j2me/">
+http://www.sun.com/software/communitysource/j2me/</a>.  We recommend
+to deflate the zipfiles to drive C: of a Windows machine into the
+directory "j2me_cldc".  The Palm binaries
+
+<ul>
+<li><b>KVM.prc</b></li> 
+<li><b>KVMutil.prc</b></li> 
+</ul> 
+
+can be found in the directory <tt>C:\j2me_cldc\bin</tt>.  Please install
+these files on your real palm, using an install tool, or just drag
+them from your Windows Explorer into a running PalmOS Emulator and you
+will see a picture similar to figure 1. At the first time executing
+the KVM you will have to accept a license agreement. By clicking on
+<b>KVM.prc</b> or <b>KVMutil.prc</b> you will see the screen shown in
+figure 2. Figure 3 shows the preferences screen of the KVM after
+accance of the SUN license agreement. 
+</p>
+
+<center> 
+<table border="true" cellpadding="5">
+  <tr>	
+    <td><img src="images/kawt_install1.gif" /></td>
+    <td><img src="images/kawt_install2.gif" /></td>
+    <td><img src="images/kawt_install3.gif" /></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Figure 1</em></td>
+    <td align="center"><em>Figure 2</em></td>
+    <td align="center"><em>Figure 3</em></td>
+  </tr>
+</table>
+</center>
+
+<p>At this point you are able to run all SUN example applications that
+are shipping in the J2ME CLDC Reference implementation. But in order
+to run kAWT applications you need to install additional classes to the
+KVM.  If you will try to run e.g. the KawtDemo application from our
+"Samples and Screenshot" section without these classes you will get
+the following results after the application file "KawtDemo.prc" is
+installed and executed on the Palm:</p> 
+
+<center> 
+<table border="true" cellpadding="5">
+  <tr>
+    <td><img src="images/kawt_install4.gif" /></td>
+    <td><img src="images/kawt_install5.gif" /></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Figure 4</em></td>
+    <td align="center"><em>Figure 5</em></td>
+  </tr>
+</table>
+</center>
+
+<p>In figure 4 the KawtDemo application is installed via drag'n'drop
+like the KVM in the first step as well. After starting the application
+the KVM will popup a dialog show in figure 5, that the class
+java.awt.Frame can not be found. This is an indicator for a lacking
+kAWT installation.  To solve this problem we will describe how to
+choose the appropriate pdb file and how to install it on POSE.</p>
+
+<p>Currently we distribute three of the above mentioned pdb files, which are stored in zip files:</p>
+
+<ul>
+
+<li><b>kawt_pdb.zip</b>: Containing the packages java.awt, java.awt.event, java.awt.image, de.kawt and de.kawt.shell.</li>
+
+<li><b>io_net_pdb.zip</b>: Including packages java.io and java.net, if you're interested in using these packages together with the original com.sun.kjava classes from SUN. </li>
+
+<li><b>kawt_io_net_pdb.zip</b>: All classes of the packages java.awt, java.awt.event, java.awt.image, de.kawt, de.kawt.shell, java.io and java.net.</li> 
+</ul>
+
+<p>The first pdb-file (kawt.pdb zipped in kawt_pdb.zip) is for users that
+are interested in kAWT development without our file emulation and
+java.net.Socket wrapper. The second pdb-file (io_net.pdb zipped in
+io_net_pdb.zip) includes the additional java.io and java.net classes
+only. We recommend to install the file <b>kawt_io_net.pdb</b> including
+all kAWT classes. So we install that file by draging it into the
+emulator right now.</p>
+
+<center>
+<table border="true" cellpadding="5">
+  <tr>
+    <td><img src="images/kawt_install4.gif" /></td>
+    <td><img src="images/kawt_install6.gif" /></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Figure 6</em></td>
+    <td align="center"><em>Figure 7</em></td>
+  </tr>
+</table>
+</center>
+
+<p>In figure 6, you can see the installed KVM, the KVMutil and the
+KawtDemo once more, and in figure 7 the running KawtDemo after
+installation of the additionally needed kAWT classes.
+
+</p>
+<h2>Compilation</h2>
+
+<p>In the installation section, we decribed how to install the kAWT on a
+Palm device or on POSE and how to run the KawtDemo.prc
+file. In this section we will explain how to use kAWT and the J2ME
+CLDC SDK to build the KawtDemo. For J2ME Development it is
+necessary to have a JDK1.2 or higher installed, because
+the J2ME CLDC SDK isn't shipping a java compiler.  You have to use the
+java compiler of the J2SE for compilation. The additinally needed
+preverifier is part of the J2ME SDK and can be found in directory
+"C:\j2me_cldc\bin".
+
+<p>The first step is to download the preverified kAWT classes that are
+included in the file <b>kawt_io_net.zip</b> from our Download
+section. Unzip the file and copy the whole directories <b>de</b>,
+<b>java</b> and <b>javax</b> into the directory
+<tt>C:\j2me_cldc\bin\api\classes</tt></p>
+
+<p>Now you have to download the source of KawtDemo from our Samples and
+Screenshots section into a working directory e.g. C:\temp.  To compile
+the KawtDemo sourcefile you have to use the following commandline:
+<pre>
+javac -bootclasspath C:\j2me_cldc\bin\api\classes KawtDemo.java
+</pre>
+If you look into your working directory you will see some new class files like:</p>
+
+<ul>
+  <li>KawtDemo.class</li>
+  <li>Closer.class</li>
+  <li>MiscPanel.class</li>
+  <li>LayoutPanel.class</li>
+  <li>ScrollbarPanel.class</li>
+</ul>
+
+<p>For debugging prposes, you can run the application on desktop java
+using the following command (to be used in the working directory)
+
+<pre>
+java KawtDemo
+</pre>
+
+and you will get see a window similar to
+the screenshot in figure 8.</p>
+
+<center>
+<table border="true" cellpadding="5">
+  <tr>
+    <td><img src="images/kawt_install7.gif" /></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Figure 8</em></td>
+  </tr>
+</table>
+</center>
+
+<p>To get a Palm executable, which can be run on a Palm device using the
+KVM we habe to preverify and build a prc-file now.  The
+preverification is done usint the following commandline. In our
+working directory we will find an additional directory called "output"
+containing the preverified classfiles.
+
+<pre>
+C:\j2me_cldc\bin\preverify -classpath .;C:\j2me_cldc\bin\api\classes .
+</pre>
+
+You can test application using SUNs "KVM/Palm Emulator" on the desktop using the following command in the output
+directory:
+
+<pre>
+C:\j2me_cldc\bin\kvm -classpath .;C:\j2me_cldc\bin\api\classes KawtDemo
+</pre>
+
+and you can see screenshot as in figure 9.</p>
+
+<center>
+<table border="true" cellpadding="5">
+  <tr>
+    <td><img src="images/kawt_install8.gif" /></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Figure 9</em></td>
+  </tr>
+</table>
+</center>
+
+<p>The last step to create the prc-files from the preverified classes
+using the java-tool MakePalmApp. This SDK-tool is entirely written in
+java and can be found in the directory
+<tt>C:\j2me_cldc\tools\palm\src\palm\database</tt>. These files are not
+compiled yet, so before we can build a prc files using these tools we
+have to compile them. The compilation is done using the command
+
+<pre>
+javac. *.java 
+</pre> 
+
+in the directory<tt>C:\j2me_cldc\tools\palm\src\palm\database</tt>.
+Please ignore the deprecation warning.  In order to build the prc
+file, please change output directory of your working directory and use
+the following command to build a Palm executable 
+
+<pre> java -classpath C:\j2me_cldc\tools\palm\src palm.database.MakePalmApp -bootclasspath .;C:\j2me_cldc\bin\api\classes KawtDemo Closer MiscPanel LayoutPanel ScrollbarPanel 
+</pre> 
+
+<p>Resulting you will find a KawtDemo.prc file in
+the output directory that can be installed on POSE and a real Palm,
+too..</p>  
+</body> 
+</html>
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+KAWTlet: KawtDemo
+MIDlet-1: KawtDemo, KawtDemo.png, de.kawt.impl.midp.KawtWrapper
+MIDlet-Jar-Size: 87735
+MIDlet-Jar-URL: KawtDemo.jar
+MIDlet-Name: KawtDemo
+MIDlet-Vendor: Sun Microsystems
+MIDlet-Version: 1.0
