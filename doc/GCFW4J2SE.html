@@ -1,0 +1,149 @@
+<html>
+  <head>
+    <title>kAWT - Compiling and using the Generic Connection Framework on the Desktop</title>
+    <link rel="stylesheet" href="../html/style.css">
+  </head> <body bgcolor="#FFFFFF"> <h1>kAWT - Compiling and using the
+Generic Connection Framework on the Desktop</h1> <p> Using kAWT, you
+are able to create AWT applications that can be executed on the Palm
+KVM and the desktop as well. But if you are interested in creating an
+application that uses connections like sockets, you need to use the
+javax.microedition.io classes of the generic connection
+framework. These classes seem to be only available for the Java 2
+Micro Edition on the first sight. However, looking into the source
+code included in the CLDC KVM v1.0, you will see that the GCF is
+available for the desktop, too. These classes just need to be compiled
+and perhaps bundled into a jar file.</p>
+
+<p> Using these classes, you are able to create kAWT applications that
+use the GCF on both platforms, J2ME and the J2SE. Here we will explain
+how to compile the GCF classes and describe a small demo
+application that runs on the Palm KVM and the desktop. Finally, we will
+describe how to create a jar file that contains all GCF classes.  </p>
+
+<p> Before we start to explain the compiling steps, please install the KVM
+that is available from
+http://www.sun.com/software/communitysource/j2me/.  We recommend to
+deflate the zip-files to drive "C:" of a Windows machine into the
+directory "j2me_cldc".  </p>
+
+<h2>Compilation</h2> 
+
+<p>The source files required for running the GCF on the desktop
+can be found in the directory "C:\j2me_cldc\api\src". Please copy the
+directories "javax" and "com" from "C:\j2me_cldc\api\src" to a
+directory like "C:\temp" where we can compile the GCF for
+J2SE.</p>
+
+<p>Please change to the directory
+"C:\temp\javax\microedition\io" and run the following command:
+<p>
+<b>C:\temp\javax\microedition\io>javac -classpath C:\temp *.java</b>
+</p>
+
+<p>After compiling the source files of the 
+javax.microedition.io package sucessfully, please change to the directory
+"C:\temp\com\sun\cldc\io\j2se" and run the same command as above:
+
+<p>
+<b>C:\temp\com\sun\cldc\io\j2se>javac -classpath C:\temp *.java</b>
+</p>
+
+<p>In this directory you can find the implementation of basic
+protocols like "serversocket" and "socket" etc. Please change to
+the directories of protocols you are interested to use on the
+desktop and run the following commands:
+<p>
+<b>C:\temp\com\sun\cldc\io\j2se\socket>javac -classpath C:\temp *.java</b><br>
+<b>C:\temp\com\sun\cldc\io\j2se\serversocket>javac -classpath C:\temp *.java</b><br>
+<b>C:\temp\com\sun\cldc\io\j2se\http>javac -classpath C:\temp *.java</b><br>
+<b>C:\temp\com\sun\cldc\io\j2se\datagram>javac -classpath C:\temp *.java</b><br>
+
+<p>You can see that there is currently no comm protocol available for
+the J2SE. In order to solve this problem, we implemented a protocol class
+that acts as a wrapper for the J2SE Communications API. If you are 
+interested in using the COMM protocol
+on the desktop, you first need to install the Java
+Communications API which can be downloaded from SUN: <a
+href="http://www.javasoft.com/products/javacomm/index.html">http://www.javasoft.com/products/javacomm/index.html</a>
+</p>
+
+<p>After getting the Java Communications API, please create a directory called "comm" in "C:\temp\com\sun\cldc\io\j2se"
+and place the COMM Protocol implementation <a href="http://www.kroll-haustein.com/files/Protocol.java">Protocol.java</a>
+into the "comm" directory. Then compile the protocol using the following command:</p>
+
+<p><b>C:\temp\com\sun\cldc\io\j2se\comm>javac -classpath C:\temp *.java</b>
+</p>
+
+<p>If you have all the protocols compiled sucessfully, you can start 
+to write applications using the GCF on J2SE.</p>
+
+<h2>Generating a jar file</h2>
+
+<p>To simplify usage of the Generic Connection Framework on the desktop,
+we will now demonstrate how to create a jar file containing all 
+GCF classes necessary for the J2SE.
+We recommend to chage to the directory "C:\temp" and type the 
+following command:
+</p>
+
+<b>
+C:\temp>jar cvf gcf4j2se.jar javax/microedition/io/*.class com/sun/cldc/io/*.class com/sun/cldc/io/j
+2se/*.class com/sun/cldc/io/j2se/datagram/*.class com/sun/cldc/io/j2se/http/*.class com/sun/cldc/io/
+j2se/serversocket/*.class com/sun/cldc/io/j2se/socket/*.class
+</b>
+</p>
+
+<p>As result, you will get the jar file "gcf4j2se.jar", which you can 
+place in your classpath for usage with your own applications.
+
+
+<h2>Demo applications for the GCF on the desktop</h2>
+
+<p> In order to test the newly created desktop version
+of the GCF, we use a so called ClockServer that is 
+implemented as a command line application and  
+encapsulates a server socket. On the client side,
+we have implemented a small AWT application that 
+receives and displays the current server time.
+
+<ul>
+<li><a href="http://www.kroll-haustein.com/files/ClockServerME.java">ClockServerME.java</a></li>
+<li><a href="http://www.kroll-haustein.com/files/ClockClientME.java">ClockClientME.java</a></li>
+</ul>
+
+<p>For demo purposes, we recommend that you store these 
+two files in the "C:\temp" directory.
+Please compile the two applications using the following command:
+</p>
+
+<p>
+<b>C:\temp>javac -classpath .;gcf4j2se.jar *.java</b><br>
+</p>
+
+<p>To test that the desktop GCF is working,  please start the 
+Server and the Client in two different shells using the 
+following commands:
+
+<ul>
+<li>To start the server:<b>C:\temp>java -classpath .;gcf4j2se.jar ClockServerME</b></li>
+<li>and for the client:<b>C:\temp>java -classpath .;gcf4j2se.jar ClockClientME</b></li>
+</ul>
+
+<p>After starting the applications, you will see one window with a waiting
+server application, ready to send the current time to the client
+application. The client application consists of a small kAWT
+application connecting to the server and printing out the server time
+into a list widget.
+The following figure shows the server and the client after a successful
+connection and transmission of the current server 
+time over a socket:
+</p>
+
+<p>
+<img src="images/ClockC_S_ME.gif">
+</p>
+
+
+
+</body> 
+</html>
